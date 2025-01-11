@@ -18,7 +18,7 @@ class Test_WP_Background_Process extends WP_UnitTestCase {
 	 *
 	 * @var MockObject|WP_Background_Process|(WP_Background_Process&MockObject)
 	 */
-	private $wpbp;
+	protected $wpbp;
 
 	/**
 	 * Performs set up before each test.
@@ -80,7 +80,7 @@ class Test_WP_Background_Process extends WP_UnitTestCase {
 	 *
 	 * @return mixed
 	 */
-	private function executeWPBPMethod( string $name, ...$args ) {
+	protected function executeWPBPMethod(string $name, ...$args ) {
 		try {
 			$method = new ReflectionMethod( 'WP_Background_Process', $name );
 			$method->setAccessible( true );
